@@ -394,6 +394,7 @@
 <script>
 (function(){
  function initModal(){var modal=document.querySelector('[data-sud-apply-modal]');if(!modal)return;function close(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('sud-modal-open')}document.addEventListener('click',function(e){var a=e.target.closest('a[href$="#hero-form"]');if(a){e.preventDefault();modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.classList.add('sud-modal-open')}if(e.target.closest('.sud-modal-close')||e.target===modal)close()});document.addEventListener('keydown',function(e){if(e.key==='Escape')close()})}
+ document.addEventListener('click',function(e){var cta=e.target.closest('.sud-cta');if(cta)setTimeout(function(){cta.blur()},0)});
  function headline(show){var h=document.querySelector('.sud-video-headline');if(h)h.classList.toggle('is-hidden',!show)}
  window._wq=window._wq||[];window._wq.push({id:'boncn1f55d',onReady:function(v){headline(v.state()!=='playing');v.bind('play',function(){headline(false)});v.bind('pause',function(){headline(true)});v.bind('end',function(){headline(true)})}});
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initModal);else initModal();
