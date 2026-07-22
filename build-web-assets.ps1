@@ -1,5 +1,5 @@
 $ErrorActionPreference = 'Stop'
-$assetDir = Join-Path $PSScriptRoot 'export\assets'
+$assetDir = Join-Path $PSScriptRoot 'assets'
 $fontDir = Join-Path $assetDir 'fonts'
 New-Item -ItemType Directory -Path $fontDir -Force | Out-Null
 
@@ -40,7 +40,7 @@ New-SudIcon 512 'favicon-maskable-512.png' 0.66
 $faviconBitmap = [System.Drawing.Bitmap]::FromFile((Join-Path $assetDir 'favicon-32.png'))
 $iconHandle = $faviconBitmap.GetHicon()
 $icon = [System.Drawing.Icon]::FromHandle($iconHandle)
-$stream = [System.IO.File]::Create((Join-Path $PSScriptRoot 'export\favicon.ico'))
+$stream = [System.IO.File]::Create((Join-Path $PSScriptRoot 'favicon.ico'))
 $icon.Save($stream)
 $stream.Dispose()
 $icon.Dispose()

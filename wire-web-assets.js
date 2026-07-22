@@ -1,5 +1,5 @@
 const fs=require('fs'),path=require('path');
-const dir=path.join(__dirname,'export');
+const dir=__dirname;
 const head=`<style data-sud-local-fonts>
 @font-face{font-family:'Archivo';font-style:normal;font-weight:500 900;font-display:swap;src:url('./assets/fonts/archivo-latin.woff2') format('woff2')}
 @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('./assets/fonts/space-grotesk-latin.woff2') format('woff2')}
