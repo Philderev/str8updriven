@@ -1,0 +1,100 @@
+# STR8UPDRIVEN - Hostinger / LiteSpeed configuration
+
+Options -Indexes -MultiViews
+ServerSignature Off
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Block unsafe legacy HTTP methods.
+  RewriteCond %{REQUEST_METHOD} ^(?:TRACE|TRACK)$ [NC]
+  RewriteRule ^ - [F,L]
+
+  # Preferred domain: https://str8updriven.online
+  RewriteCond %{HTTP_HOST} !^str8updriven\.online$ [NC]
+  RewriteRule ^ https://str8updriven.online%{REQUEST_URI} [R=301,L,NE]
+
+  # Force HTTPS while avoiding proxy/CDN redirect loops.
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !^https$ [NC]
+  RewriteRule ^ https://str8updriven.online%{REQUEST_URI} [R=301,L,NE]
+
+  # Canonical homepage URL.
+  RewriteCond %{THE_REQUEST} \s/+index\.html(?:[?\s]) [NC]
+  RewriteRule ^index\.html$ /home [R=301,L,NE]
+  RewriteRule ^$ /home [R=301,L]
+
+  # Redirect direct .html requests to clean public URLs.
+  RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[?\s]) [NC]
+  RewriteRule ^(.+)\.html$ /$1 [R=301,L,NE]
+
+  # Internally serve the homepage and clean page URLs.
+  RewriteRule ^home/?$ index.html [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+</IfModule>
+
+# Branded error pages.
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+
+# Compress text-based responses. Brotli is preferred when available.
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/javascript application/javascript application/json application/ld+json application/xml image/svg+xml
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json application/ld+json application/xml image/svg+xml
+</IfModule>
+
+# Browser caching.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 hour"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType application/json "access plus 1 hour"
+  ExpiresByType application/ld+json "access plus 1 hour"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType video/mp4 "access plus 1 month"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # HTML should revalidate; versioned static assets may be cached long-term.
+  <FilesMatch "\.(?:html?)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(?:css|js|jpg|jpeg|png|gif|webp|avif|svg|ico|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Security headers that remain compatible with the embedded GHL form and Wistia videos.
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), geolocation=(), microphone=(), payment=(), usb=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+  Header unset X-Powered-By
+</IfModule>
+
+# Restrict access to hidden, backup, source, configuration, and archive files.
+<FilesMatch "(?i)(^\.|\.md$|\.bak$|\.backup$|\.config$|\.env$|\.ini$|\.log$|\.orig$|\.sql$|\.ya?ml$|\.zip$|~$)">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
