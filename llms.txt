@@ -32,7 +32,6 @@ The program may include live mentorship, automotive valuation tools, deal-manage
 
 - Home and mentorship overview: https://str8updriven.online/home
 - About Tony Nino and STR8UPDRIVEN: https://str8updriven.online/about-us
-- Book a call: https://str8updriven.online/book-a-call
 - Privacy policy: https://str8updriven.online/privacy-policy
 - Terms of service: https://str8updriven.online/terms-of-service
 - XML sitemap: https://str8updriven.online/sitemap.xml
