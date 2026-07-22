@@ -41,6 +41,8 @@
  .sud-cta .sud-flip-track{will-change:transform}
  .sud-footer-link-active:hover{color:#f5f5f6}
  .sud-footer-link-dim:hover{color:#c9ccd1}
+ @media(max-width:980px){.sud-legal-shell{padding-left:32px!important;padding-right:32px!important}}
+ @media(max-width:640px){.sud-legal-shell{padding-left:20px!important;padding-right:20px!important}.sud-legal-nav{gap:14px!important}.sud-legal-nav a:not(:first-child):not(:last-child){display:none}}
  @media(prefers-reduced-motion:reduce){.sud-cta{transition:none!important}.sud-cta:hover,.sud-cta:focus-visible{transform:none}}
 </style>
 <style data-sud-local-fonts>
@@ -59,9 +61,9 @@
 <body>
 <div style="background:#0a0a0c;color:#f0f0f1;font-family:'Space Grotesk',sans-serif;overflow-x:hidden">
 
-  <div style="height:84px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;border-bottom:1px solid rgba(255,255,255,0.1);position:sticky;top:0;background:#0a0a0c;z-index:100">
+  <div class="sud-legal-shell" style="height:84px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;border-bottom:1px solid rgba(255,255,255,0.1);position:sticky;top:0;background:#0a0a0c;z-index:100">
     <a href="./index.html"><img src="./assets/logo.png" alt="STR8UPDRIVEN" style="height:51px;width:auto;object-fit:contain"></a>
-    <div style="display:flex;align-items:center;gap:44px">
+    <div class="sud-legal-nav" style="display:flex;align-items:center;gap:44px">
       <a href="./index.html#value-stack" class="sud-nav-link" style="color:#c9ccd1;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;overflow:hidden;height:14px;display:inline-block"><span class="sud-nav-track"><span style="display:block;height:14px">The Offer</span><span style="display:block;height:14px;color:#E31B23">The Offer</span></span></a>
       <a href="./index.html#faq" class="sud-nav-link" style="color:#c9ccd1;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;overflow:hidden;height:14px;display:inline-block"><span class="sud-nav-track"><span style="display:block;height:14px">FAQ</span><span style="display:block;height:14px;color:#E31B23">FAQ</span></span></a>
       <a href="./about-us.html" class="sud-nav-link" style="color:#c9ccd1;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;overflow:hidden;height:14px;display:inline-block"><span class="sud-nav-track"><span style="display:block;height:14px">About</span><span style="display:block;height:14px;color:#E31B23">About</span></span></a>
@@ -69,7 +71,7 @@
     </div>
   </div>
 
-  <section style="padding:140px 64px 32px;text-align:center">
+  <section class="sud-legal-shell" style="padding:140px 64px 32px;text-align:center">
     <div style="display:flex;align-items:baseline;justify-content:center;gap:16px;margin-bottom:24px">
       <span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:14px;color:#E31B23"></span>
       <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#63666d">Legal</span>
@@ -78,7 +80,7 @@
     <div style="color:#63666d;font-size:14px;margin-top:20px">Last updated July 2026</div>
   </section>
 
-  <section style="padding:64px 64px 160px">
+  <section class="sud-legal-shell" style="padding:64px 64px 160px">
     <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:0">
       <p style="font-family:'Archivo',sans-serif;font-weight:500;font-size:20px;line-height:1.5;color:#f5f5f6;margin:0 0 28px;text-wrap:pretty">Straightforward terms, written to be read. No fine-print surprises. Here's exactly what governs your membership.</p>
       <p style="font-size:17px;line-height:1.8;color:#c9ccd1;margin:0 0 56px;text-wrap:pretty">Welcome to STR8UPDRIVEN ("Company," "we," "our," or "us"). These Terms of Service ("Terms") govern your access to and use of our website, community platform, educational content, tools, and any related services (collectively, the "Service"). By accessing or using the Service, creating an account, or purchasing a membership, you agree to be bound by these Terms, our Privacy Policy, and our Usage Agreement. If you do not agree, do not use the Service.</p>
@@ -124,7 +126,7 @@
     </div>
   </section>
 
-  <footer style="border-top:1px solid rgba(255,255,255,0.1);padding:56px 64px 44px">
+  <footer class="sud-legal-shell" style="border-top:1px solid rgba(255,255,255,0.1);padding:56px 64px 44px">
     <div style="max-width:1440px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px">
       <a href="./index.html"><img src="./assets/logo.png" alt="STR8UPDRIVEN" style="height:42px;width:auto;object-fit:contain"></a>
       <div style="display:flex;gap:32px;flex-wrap:wrap">

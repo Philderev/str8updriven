@@ -36,7 +36,7 @@
  .sud-zoom-wrap:hover img{transform:scale(1.08)}
  .sud-media-zoom img{transition:transform 0.4s}
  .sud-media-zoom:hover img{transform:scale(1.06)}
- @media(max-width:980px){.sud-about-shell{padding-left:32px;padding-right:32px}}
+ @media(max-width:980px){.sud-about-shell{padding-left:32px;padding-right:32px}.sud-stack-980{grid-template-columns:1fr!important;gap:40px!important}.sud-founder-sticky{position:static!important}}
  @media(max-width:640px){.sud-about-shell{padding-left:20px;padding-right:20px}.sud-header-inner>div{gap:14px!important}.sud-header-inner a:not(:first-child):not(:last-child){display:none}.sud-logo{height:45px}}
 </style><style data-sud-interactions>
  .sud-nav-link{position:relative;display:inline-block!important;height:14px;line-height:14px;overflow:hidden;color:#c9ccd1!important;outline:none}
@@ -93,8 +93,8 @@
   </section>
 
   <section style="background:#0a0a0c;padding:140px 0;border-bottom:1px solid rgba(255,255,255,0.1)">
-    <div class="sud-about-shell" style="max-width:1440px;display:grid;grid-template-columns:0.9fr 1.1fr;gap:96px;align-items:start">
-      <div style="position:sticky;top:120px">
+    <div class="sud-about-shell sud-stack-980" style="max-width:1440px;display:grid;grid-template-columns:0.9fr 1.1fr;gap:96px;align-items:start">
+      <div class="sud-founder-sticky" style="position:sticky;top:120px">
         <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:32px">
           <span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:14px;color:#E31B23"></span>
           <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#E31B23">About the Founder</span>
@@ -111,7 +111,7 @@
   </section>
 
   <section style="background:#0a0a0c;padding:140px 0;border-bottom:1px solid rgba(255,255,255,0.1)">
-    <div class="sud-about-shell" style="max-width:1440px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:96px;align-items:center">
+    <div class="sud-about-shell sud-stack-980" style="max-width:1440px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:96px;align-items:center">
       <div>
         <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:32px">
           <span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:14px;color:#E31B23"></span>
@@ -147,7 +147,7 @@
       </div>
       <h2 style="font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(28px,3.6vw,46px);color:#f5f5f6;margin:0 0 72px;letter-spacing:-0.02em;max-width:800px">Media features and interviews that share Tony's story and results</h2>
 
-      <a href="https://www.youtube.com/watch?v=Q8eT8rVARnE" target="_blank" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:48px 0;border-top:1px solid rgba(255,255,255,0.12)">
+      <a href="https://www.youtube.com/watch?v=Q8eT8rVARnE" target="_blank" class="sud-stack-980" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:48px 0;border-top:1px solid rgba(255,255,255,0.12)">
         <div class="sud-media-zoom" style="aspect-ratio:16/9;background:#0d0d0f;overflow:hidden;border:1px solid #E31B23;order:1">
           <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164190857/settings_images/c023a60-e4d5-7ff-7e7c-bb643be2a585_92dc4142-5532-4c6e-9561-7725cd3ba800.png" alt="Social Hour with Sean Kelly" style="width:100%;height:100%;object-fit:cover">
         </div>
@@ -157,7 +157,7 @@
           <span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#E31B23;border-bottom:2px solid #E31B23;padding-bottom:4px">Watch Here</span>
         </div>
       </a>
-      <a href="https://www.instagram.com/reels/C1qMHLDt0nt/" target="_blank" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:48px 0;border-top:1px solid rgba(255,255,255,0.12)">
+      <a href="https://www.instagram.com/reels/C1qMHLDt0nt/" target="_blank" class="sud-stack-980" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:48px 0;border-top:1px solid rgba(255,255,255,0.12)">
         <div class="sud-media-zoom" style="aspect-ratio:16/9;background:#0d0d0f;overflow:hidden;border:1px solid #E31B23;order:2">
           <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164190857/settings_images/0621dd2-6157-8b13-ca3f-2e61a23c0662_a35c375-52e0-811d-50f6-4fdbb7ce708b_TechIncluded_1.png" alt="Netflix: Car Masters" style="width:100%;height:100%;object-fit:cover">
         </div>
@@ -167,7 +167,7 @@
           <span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#E31B23;border-bottom:2px solid #E31B23;padding-bottom:4px">Watch Here</span>
         </div>
       </a>
-      <a href="https://www.youtube.com/watch?v=nyUqJbVJey4" target="_blank" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:48px 0;border-top:1px solid rgba(255,255,255,0.12)">
+      <a href="https://www.youtube.com/watch?v=nyUqJbVJey4" target="_blank" class="sud-stack-980" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:48px 0;border-top:1px solid rgba(255,255,255,0.12)">
         <div class="sud-media-zoom" style="aspect-ratio:16/9;background:#0d0d0f;overflow:hidden;border:1px solid #E31B23;order:1">
           <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164190857/settings_images/bbaefa3-1b65-fe55-ffaf-738a57ec876_a35c375-52e0-811d-50f6-4fdbb7ce708b_TechIncluded_1.png" alt="Supercar Connection Podcast" style="width:100%;height:100%;object-fit:cover">
         </div>
