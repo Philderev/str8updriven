@@ -35,7 +35,6 @@ The program may include live mentorship, automotive valuation tools, deal-manage
 - Book a call: https://str8updriven.online/book-a-call
 - Privacy policy: https://str8updriven.online/privacy-policy
 - Terms of service: https://str8updriven.online/terms-of-service
-- Usage agreement: https://str8updriven.online/usage-agreement
 - XML sitemap: https://str8updriven.online/sitemap.xml
 
 ## Preferred Terminology
