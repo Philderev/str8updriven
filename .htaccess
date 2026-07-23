@@ -54,7 +54,7 @@ ErrorDocument 500 /500.html
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresDefault "access plus 1 hour"
-  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/html "access plus 1 hour"
   ExpiresByType text/css "access plus 7 days"
   ExpiresByType application/javascript "access plus 7 days"
   ExpiresByType application/json "access plus 1 hour"
@@ -70,9 +70,9 @@ ErrorDocument 500 /500.html
 </IfModule>
 
 <IfModule mod_headers.c>
-  # HTML should revalidate; versioned static assets may be cached long-term.
+  # HTML is force-cached for a short window; versioned static assets are cached long-term.
   <FilesMatch "\.(?:html?)$">
-    Header set Cache-Control "no-cache, must-revalidate"
+    Header set Cache-Control "public, max-age=3600"
   </FilesMatch>
   <FilesMatch "\.(?:css|js|jpg|jpeg|png|gif|webp|avif|svg|ico|woff2?)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
