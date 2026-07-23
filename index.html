@@ -383,21 +383,12 @@
 
 </div>
 
-<style data-sud-restored-runtime>
- .sud-apply-modal{position:fixed;inset:0;z-index:100000;display:none;overflow:auto;background:rgba(0,0,0,.82);backdrop-filter:blur(8px);padding:26px 20px}
- .sud-apply-modal.is-open{display:block}.sud-modal-form{position:relative;width:min(548px,100%);height:740px;margin:0 auto;background:transparent}
- .sud-modal-form iframe{width:100%;height:100%;border:0;background:transparent}.sud-modal-close{position:absolute;z-index:2;right:8px;top:8px;border:0;background:transparent;color:#fff;font-size:32px;line-height:1;cursor:pointer;padding:4px}
- body.sud-modal-open{overflow:hidden}
-</style>
-<div class="sud-apply-modal" data-sud-apply-modal aria-hidden="true"><div class="sud-modal-form"><button class="sud-modal-close" type="button" aria-label="Close application form">×</button><iframe src="https://leadhubb.alegresolutionsgs.com/widget/form/D2YJ9tSlJfCmjfJEEp9t" title="Apply for Your Spot" loading="lazy"></iframe></div></div>
 <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
 <script>
 (function(){
- function initModal(){var modal=document.querySelector('[data-sud-apply-modal]');if(!modal)return;function close(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('sud-modal-open')}document.addEventListener('click',function(e){var a=e.target.closest('a[href$="#hero-form"]');if(a){e.preventDefault();modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.classList.add('sud-modal-open')}if(e.target.closest('.sud-modal-close')||e.target===modal)close()});document.addEventListener('keydown',function(e){if(e.key==='Escape')close()})}
  document.addEventListener('click',function(e){var cta=e.target.closest('.sud-cta');if(cta)setTimeout(function(){cta.blur()},0)});
  function headline(show){var h=document.querySelector('.sud-video-headline');if(h)h.classList.toggle('is-hidden',!show)}
  window._wq=window._wq||[];window._wq.push({id:'boncn1f55d',onReady:function(v){headline(v.state()!=='playing');v.bind('play',function(){headline(false)});v.bind('pause',function(){headline(true)});v.bind('end',function(){headline(true)})}});
- if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initModal);else initModal();
 })();
 </script>
 <style data-sud-cookie-style>
